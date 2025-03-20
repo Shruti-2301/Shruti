@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Application Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background-color: #fff;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            background: #4CAF50;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(to right, #4CAF50, #45a049);
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(to right, #45a049, #4CAF50);
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .name-group {
+            display: flex;
+            gap: 15px;
+        }
+
+        .name-group input {
+            width: 100%;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .checkbox-group label {
+            font-weight: normal;
+        }
+
+        .note {
+            font-size: 13px;
+            color: #777;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .name-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Scholarship Application Form</h2>
+        <p style="text-align: center; margin-bottom: 20px; color: #555;">Fill out the form carefully to apply for the scholarship.</p>
+
+        <form action="submit_form.php" method="POST" enctype="multipart/form-data">
+
+            <!-- Personal Information -->
+            <div class="section">
+                <h3>1. Personal Information</h3>
+
+                <label for="full_name">Full Name *</label>
+                <div class="name-group">
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name" required>
+                    <input type="text" id="middle_name" name="middle_name" placeholder="Middle Name (Optional)">
+                    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required>
+                </div>
+
+                <label for="father_name">Father's Name *</label>
+                <input type="text" id="father_name" name="father_name" required>
+
+                <label for="mother_name">Mother's Name *</label>
+                <input type="text" id="mother_name" name="mother_name" required>
+
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required>
+
+                <label for="gender">Gender *</label>
+                <select id="gender" name="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="password">Create a Password *</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="confirm_password">Confirm Password *</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+
+                <label for="address">Address *</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="city">City *</label>
+                <select id="city" name="city" required>
+                    <option value="">Select Your City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Educational Information -->
+            <div class="section">
+                <h3>2. Educational Information</h3>
+
+                <label for="institute">Institute Name *</label>
+                <input type="text" id="institute" name="institute" required>
+
+                <label for="college">College Name *</label>
+                <input type="text" id="college" name="college" required>
+
+                <label for="institute_address">Institute Address *</label>
+                <textarea id="institute_address" name="institute_address" rows="3" required></textarea>
+
+                <label for="course">Course Name *</label>
+                <input type="text" id="course" name="course" required>
+
+                <label for="year">Year of Study *</label>
+                <select id="year" name="year" required>
+                    <option value="">Select Year</option>
+                    <option value="1">1st Year</option>
+                    <option value="2">2nd Year</option>
+                    <option value="3">3rd Year</option>
+                    <option value="4">4th Year</option>
+                </select>
+
+                <label for="gpa">GPA/Percentage *</label>
+                <input type="text" id="gpa" name="gpa" required>
+
+                <label for="family_income">Annual Family Income *</label>
+                <input type="text" id="family_income" name="family_income" required>
+
+                <label for="purpose">Purpose of Scholarship *</label>
+                <textarea id="purpose" name="purpose" rows="3" placeholder="Explain why you are applying for this scholarship" required></textarea>
+            </div>
+
+            <!-- Document Uploads -->
+            <div class="section">
+                <h3>3. Upload Required Documents</h3>
+
+                <label for="photo">Upload Passport Size Photo *</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <label for="marksheet">Upload Previous Year Marksheet *</label>
+                <input type="file" id="marksheet" name="marksheet" accept=".pdf,.jpg,.png" required>
+
+                <label for="income_certificate">Upload Income Certificate *</label>
+                <input type="file" id="income_certificate" name="income_certificate" accept=".pdf,.jpg,.png" required>
+
+                <label for="aadhaar">Upload Aadhaar Card *</label>
+                <input type="file" id="aadhaar" name="aadhaar" accept=".pdf,.jpg,.png" required>
+            </div>
+
+            <!-- Bank Details -->
+            <div class="section">
+                <h3>4. Bank Details for Scholarship Disbursement</h3>
+
+                <label for="account_name">Name of Account Holder *</label>
+                <input type="text" id="account_name" name="account_name" required>
+
+                <label for="bank_name">Bank Name *</label>
+                <input type="text" id="bank_name" name="bank_name" required>
+
+                <label for="account_number">Account Number *</label>
+                <input type="text" id="account_number" name="account_number" required>
+
+                <label for="ifsc">IFSC Code *</label>
+                <input type="text" id="ifsc" name="ifsc" required>
+            </div>
+
+            <!-- Declaration -->
+            <div class="section">
+                <h3>5. Declaration and Agreement</h3>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="declare" name="declare" required>
+                    <label for="declare">I hereby declare that all the information provided is true to the best of my
+                        knowledge.</label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Submit Application">
+
+        </form>
+    </div>
+
+</body>
+
+</html>
